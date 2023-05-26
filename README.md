@@ -28,13 +28,41 @@ Firstly, you can download (or purchase) the PyCharm IDE installer file from [PyC
 
 ### Anaconda or Miniconda
 
-Next, the [Anaconda](https://www.anaconda.com/) or [Minconda](https://conda.io/en/latest/miniconda.html)
+Next, install the [Anaconda](https://www.anaconda.com/) or [Minconda](https://conda.io/en/latest/miniconda.html) in your machine. 
+
+This project uses Miniconda version 23.3.1.
 
 ### Access to the Refinitiv Data Platform
 
 This project uses Refinitiv Data Platform (RDP) User ID type credential (example: sample@lseg.com). 
 
 Please contact your Refinitiv representative to help you with the RDP account and services.
+
+### Internet Access to PyPi
+
+The Refinitiv Data Library for Python is available in the Python Package Index ([PyPI](https://pypi.org/)). You can use the Python pip tool to download the library from [Refinitiv-Data package](https://pypi.org/project/refinitiv-data/) over internet. 
+
+## <a id="whatis_rdp"></a>What is Refinitiv Data Library for Python?
+
+Now let me turn to our example Python library for this project. The [Refinitiv Data Library for Python](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) (aka RD Lib - Python) provides a set of ease-of-use interfaces offering coders uniform access to the breadth and depth of financial data and services available on the Refinitiv Data Platform. The API is designed to provide consistent access through multiple access channels and target both Professional Developers and Financial Coders. Developers can choose to access content from the desktop, through their deployed streaming services, or directly to the cloud. With the Refinitiv Data Library, the same Python code can be used to retrieve data regardless of which access point you choose to connect to the platform.
+
+This example project is focusing on the platform session which connecting to the [Refinitiv Data Platform APIs](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) only.  
+
+![figure-1](images/rd_image.png "Refinitiv Data Library for Python")
+
+For more detail regarding the Refinitiv Data Platform, please see the following APIs resources: 
+- [Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) page.
+- [Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/tutorials) page.
+
+## <a id="new_project"></a>Set up a blank project
+
+### Step 1: Creating a new project
+
+Firstly, create a new development project. Please open the PyCharm IDE and choose "New Project" on the welcome screen.
+
+![figure-2](images/01_pycharm.png "step 1: new project")
+
+Next, input the project location (I pick *C:\drive_d\Project\Code\Pycharm_RD_Python* folder as my work location) and set the following properties:
 
 TBD
 
