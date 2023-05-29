@@ -89,6 +89,88 @@ The result is as follows:
 
 ![figure-6](images/05_pycharm.png "hello world example")
 
+### Step 2: Set up the Project setting for Refinitiv Data Library for Python
+
+The next step is installing the Refinitiv Data Library for Python dependencies. Firstly, open the Python Package tool window available at the bottom of the screen as follows:
+
+![figure-7](images/06_pycharm_package.png "PyCharm Package tool window")
+
+You can start typing the package name in the Search field. PyCharm then shows matching packages on each repository. Since we are using a Conda environment, so PyCharm shows search results on both Conda and PyPI repositories like the following search result for the *python-dotenv* package.
+
+![figure-8](images/06_pycharm_package_conda.png "PyCharm search package")
+
+To install Refinitiv Data Library for Python, type **refinitiv** in the Search field. The RD Lib - Python is available on PyPI only, so I choose the **refinitiv-data** package under PyPI and click the "Install with pip" button to install the package.
+
+![figure-9](images/06_pycharm_package_rd.png "PyCharm install refinitiv-data 1")
+
+Once the package installation is successful, you see the notification, and the **refinitiv-data** package is listed in the installed packages.
+
+![figure-10](images/06_pycharm_package_rd_3.png "PyCharm install refinitiv-data 2")
+
+![figure-11](images/06_pycharm_package_rd_4.png "PyCharm install refinitiv-data 3")
+
+The next step is testing the RD Lib - Python. You can add the **refinitiv-data.config.json** file to the IDE with the following configurations:
+
+``` JSON
+{
+    "logs": {
+        "level": "debug",
+        "transports": {
+            "console": {
+                "enabled": false
+            },
+            "file": {
+                "enabled": false,
+                "name": "refinitiv-data-lib.log"
+            }
+        }
+    },
+    "sessions": {
+        "default": "platform.rdp",
+        "platform": {
+            "rdp": {
+                "app-key": "App Key",
+                "username": "RDP User ID",
+                "password": "RDP Password"
+            },
+           
+        }
+       
+    }
+}
+```
+
+Please refer to the [Quickstart page](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) if you are using other Access Points such as Desktop session, etc.
+
+Next, change the code of ```main.py``` to call RD - Lib Python instead as follows:
+
+``` Python
+
+import json
+import refinitiv.data as rd
+
+if __name__ == '__main__':
+    rd.open_session(name='platform.rdp')
+    data = rd.get_data(['EUR=', 'THB='], fields=['BID', 'ASK'])
+    print(data)
+
+    rd.close_session()
+```
+
+Your PyCharm IDE should look like the following screenshot:
+
+![figure-12](images/07_pycharm_code.png "PyCharm with RD Code")
+
+If your RDP credential works fine, the running result shows as follows:
+
+![figure-13](images/07_pycharm_code_2.png "PyCharm with RD Run Result")
+
+Now your PyCharm is ready to work with Refinitiv Data Library for Python.
+
+For more detail about packages management with PyCharm, please check the [official document](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html).
+
+### Step 3: Plotting Graph
+
 TBD
 
 ## <a id="ref"></a>References
