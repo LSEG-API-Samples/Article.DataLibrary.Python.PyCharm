@@ -63,6 +63,31 @@ Firstly, create a new development project. Please open the PyCharm IDE and choos
 ![figure-2](images/01_pycharm.png "step 1: new project")
 
 Next, input the project location (I pick *C:\drive_d\Project\Code\Pycharm_RD_Python* folder as my work location) and set the following properties:
+- *New environment using*: Conda
+- *Location*: Point to your &lt;Conda&gt;\envs\\&lt;Project name&gt;
+- *Python version*: Based on your preference, I choose Python 3.10. Please refer to the [Python End Of Life page](https://endoflife.date/python)
+- *Conda executable*: Point to &lt;Conda&gt;\Script\conda.exe location in your Conda installation folder
+- *Create a main.py welcome script*: Choose this option
+
+![figure-2](images/02_pycharm_newproject_a.png "PyCharm new project")
+
+Note: PyCharm supports the [Virtualenv](https://virtualenv.pypa.io/en/latest/), [Pipenv](https://pipenv.pypa.io/en/latest/), [Poetry](https://python-poetry.org/), and [Anaconda](https://www.anaconda.com/)/[Minconda](https://conda.io/en/latest/miniconda.html) Python virtual environment and Packaging/Dependencies Management tools. I choose Conda for Python versioning flexibility. Please choose this option based on your development requirement.
+
+Then PyCharm initializes the project and Conda environment.
+
+![figure-3](images/03_pycharm.png)
+
+Once the project and Conda environment are created successfully, you see this IDE screen with an example ```main.py``` code as follows:
+
+![figure-4](images/04_pycharm.png "create new project success")
+
+You can use this example ```main.py``` script to test if PyCharm can run Python properly on your machine. To run the code, right-click and choose Run 'Main' menu or click the Run command at the toolbar.
+
+![figure-5](images/04_pycharm_2.png 'Run Python project')
+
+The result is as follows:
+
+![figure-6](images/05_pycharm.png "hello world example")
 
 TBD
 
