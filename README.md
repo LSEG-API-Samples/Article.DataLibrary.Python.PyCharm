@@ -171,6 +171,75 @@ For more detail about packages management with PyCharm, please check the [offici
 
 ### Step 3: Plotting Graph
 
+Now we come to how to plot a graph with PyCharm. Please note that the [Jupyter Notebook integration](https://www.jetbrains.com/help/pycharm/jupyter-notebook-support.html) is available in PyCharm Professional Edition only, so I am demonstrating with a basic graph from a console application instead. 
+
+The first step is to install the [Matplotlib](https://matplotlib.org/) library. You can open the Python Package tool window to install the package. However, the PyCharm has [Terminal emulator](https://www.jetbrains.com/help/pycharm/terminal-emulator.html#:~:text=PyCharm%20includes%20an%20embedded%20terminal,to%20a%20dedicated%20terminal%20application.) that run the project Conda (or Virtualenv) shell automatically and you can run the ```pip``` and ```conda``` commands to manage the Python environment directly.
+
+To open the Terminal, just click the Terminal tool window at the bottom of the screen. You see that it activates Conda Pycharm_RDPython by default.
+
+![figure-14](images/08_pycharm_terminal.png "Open a terminal")
+
+The Matplotlib library is available on both [conda-forge](https://anaconda.org/conda-forge/matplotlib) and [PyPI](https://pypi.org/project/matplotlib/), let's stick with the PyPI for consistency and install the package with the ```pip install``` command.
+
+``` bash
+(Pycharm_RD_Python) C:> pip install matplotlib
+```
+![figure-15](images/08_pycharm_terminal_2.png "installing Matplotlib")
+
+Next, add a new Python file ```chart.py``` to the IDE with the following source code.
+
+Please see how to add Python files from [the official page](https://www.jetbrains.com/help/dataspell/populating-projects.html).
+
+``` Python
+import pandas as pd
+import matplotlib.pyplot as plt
+import refinitiv.data as rd
+from refinitiv.data.content import historical_pricing
+from refinitiv.data.content.historical_pricing import Intervals
+
+
+if __name__ == '__main__':
+    rd.open_session(name='platform.rdp')
+    universe = 'META.O'
+    response = historical_pricing.summaries.Definition(
+        universe=universe,
+        interval=Intervals.DAILY,  # Supported intervals: DAILY, WEEKLY, MONTHLY, QUARTERLY, YEARLY.
+        count=10,
+        fields=['BID', 'ASK', 'OPEN_PRC', 'HIGH_1', 'LOW_1', 'TRDPRC_1']
+    ).get_data()
+
+    response.data.df['Instrument'] = universe
+    response.data.df.reset_index(level=0, inplace=True)
+    dataPlot = pd.DataFrame(response.data.df,
+                            columns=['Instrument', 'Date', 'BID', 'ASK', 'OPEN_PRC', 'TRDPRC_1', 'HIGH_1', 'LOW_1'])
+    dataPlot.sort_values('Date', ascending=True, inplace=True)
+    dataPlot.plot(x='Date', y=['BID', 'ASK', 'OPEN_PRC', 'TRDPRC_1', 'HIGH_1', 'LOW_1'], figsize=(14, 7))
+    plt.show()
+
+    rd.close_session()
+```
+
+The result is as follows:
+
+![figure-16](images/08b_pycharm_graph.png "Graph")
+
+That’s all I have to say about plotting graphs in PyCharm IDE.
+
+### Step 4: Save and Export Dependencies
+
+My next point is how to save and export this project's dependencies. It is one of the most important parts to help share the project with your colleagues. With the right setting, your team (or even yourself) can re-create this development environment in simple steps.
+
+A ```requirements.txt``` is a simple text file that saves a list of the Python modules and libraries required by the project/Python environment. To generate a file, you can open the Terminal tool window and run the following command:
+
+``` bash
+(Pycharm_RD_Python) C:> pip freeze  > requirements.txt
+```
+![figure-17](images/09_pycharm_pipfreeze.png "pip freeze")
+
+That covers how to save and export this project's dependencies.
+
+## <a id="continue_project"></a>Import existing code to PyCharm
+
 TBD
 
 ## <a id="ref"></a>References
@@ -179,5 +248,6 @@ For further details, please check out the following resources:
 * [Refinitiv Data Library for Python](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) website.
 * [Getting Started with Refinitiv Data Platform](https://developers.refinitiv.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article
 * [PyCharm: Configure a conda virtual environment](https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html#create-a-conda-environment)
+* [PyCharm: Create and run your first project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html)
 
 
