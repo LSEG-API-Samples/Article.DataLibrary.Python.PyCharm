@@ -240,7 +240,21 @@ That covers how to save and export this project's dependencies.
 
 ## <a id="continue_project"></a>Import existing code to PyCharm
 
-TBD
+If you have existing Python source code, requirements.txt, and other configuration files. You can create a new PyCharm project with existing files to continue developing the application using PyCharm.
+
+### Step 1: Create a new project with a non-empty folder
+
+I pick the *C:\drive_d\Project\Code\Pycharm_RD_Python_2* folder as my new work location. The folder contains some Python and RDP configuration files as follows:
+
+![figure-18](images/10_pycharm_1.png "new project on non-empty folder")
+
+Next, I am creating a new project on that folder with the same option as a blank project, except uncheck the "Create a main.py welcome script" option as follows:
+
+![figure-20](images/10_pycharm_2.png "new project on non-empty folder")
+
+PyCharm IDE can detect that the target folder is not empty and asks if we want to create a new project from existing sources, choose this option.
+
+![figure-21](images/10_pycharm_3.png "new project on non-empty folder")
 
 ## <a id="ref"></a>References
 
