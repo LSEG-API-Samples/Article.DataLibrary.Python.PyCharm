@@ -232,7 +232,7 @@ My next point is how to save and export this project's dependencies. It is one o
 A ```requirements.txt``` is a simple text file that saves a list of the Python modules and libraries required by the project/Python environment. To generate a file, you can open the Terminal tool window and run the following command:
 
 ``` bash
-(Pycharm_RD_Python) C:> pip freeze  > requirements.txt
+(Pycharm_RD_Python) C:..> pip freeze  > requirements.txt
 ```
 ![figure-17](images/09_pycharm_pipfreeze.png "pip freeze")
 
@@ -255,6 +255,49 @@ Next, I am creating a new project on that folder with the same option as a blank
 PyCharm IDE can detect that the target folder is not empty and asks if we want to create a new project from existing sources, choose this option.
 
 ![figure-21](images/10_pycharm_3.png "new project on non-empty folder")
+
+Once the project and Conda environment are created successfully, you see this IDE screen with existing code as follows:
+
+![figure-22](images/11_pycharm.png "new project on existing code")
+
+You may be noticed that the IDE can detect the source code use the Python libraries that not installed in the Conda environment yet. If you open a ```requirements.txt``` file, the IDE shows the same message as well.
+
+![figure-23](images/11_pycharm_pip_install_1.png "install dependencies")
+
+I am **not recommended** you install the required libraries with the IDE tool's "install requirements" button. Based on my experience, I always encounters pip install error issue. 
+
+To install required library, I highly recommend you open the Terminal window and install dependencies to the active environment with the following command instead.
+
+```bash
+(Pycharm_RD_Python_2) PS C:..> pip install -r .\requirements.txt
+```
+![figure-24](images/11_pycharm_pip_install_2.png "install dependencies")
+
+Now this project is ready for RD Library - Python coding.
+
+## <a id="reuse_conda"></a>Reuse existing Conda environment
+
+One benefit of using Anaconda/Miniconda over Virtualenv is developers can share a Conda environment with multiple projects. If the projects share the same dependencies requirements, developers do not need to create a new Conda environment. 
+
+For example, I am creating a new Pycharm_RD_Python_3 project at *C:\drive_d\Project\Code\Pycharm_RD_Python_3* folder but I want to use *Pycharm_RD_Python* Conda environment with this project.
+
+In the new project window, choose the "Previously configured interpreter" option, and click the "Add Local Interpreter.." menu.
+
+![Alt text](images/12_pycharm.png)
+
+In the Add Python Interpreter window, choose "Conda Environment" and select the environment that you want to use from a drop-down list as follows:
+
+![Alt text](images/12_pycharm_2.png)
+
+![Alt text](images/12_pycharm_3.png)
+
+You may want to change Python interpreter/environment on the fly to test the project with other versions of Python or libraries. You can change the project's interpreter/environment by clicking on the Python Interpreter selector located on the status bar.
+
+![Alt text](images/12_pycharm_4.png)
+
+That is all for how to reuse or change the Python environment on the fly.
+
+Please see more detail on the [Configure a Python interpreter](https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html) page.
 
 ## <a id="ref"></a>References
 
