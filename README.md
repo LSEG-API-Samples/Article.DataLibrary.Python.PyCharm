@@ -283,21 +283,46 @@ For example, I am creating a new Pycharm_RD_Python_3 project at *C:\drive_d\Proj
 
 In the new project window, choose the "Previously configured interpreter" option, and click the "Add Local Interpreter.." menu.
 
-![Alt text](images/12_pycharm.png)
+![figure-25](images/12_pycharm.png)
 
 In the Add Python Interpreter window, choose "Conda Environment" and select the environment that you want to use from a drop-down list as follows:
 
-![Alt text](images/12_pycharm_2.png)
+![figure-26](images/12_pycharm_2.png)
 
-![Alt text](images/12_pycharm_3.png)
+![figure-27](images/12_pycharm_3.png)
 
 You may want to change Python interpreter/environment on the fly to test the project with other versions of Python or libraries. You can change the project's interpreter/environment by clicking on the Python Interpreter selector located on the status bar.
 
-![Alt text](images/12_pycharm_4.png)
+![figure-28](images/12_pycharm_4.png)
 
 That is all for how to reuse or change the Python environment on the fly.
 
 Please see more detail on the [Configure a Python interpreter](https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html) page.
+
+## <a id="troubleshooting"></a>Troubleshooting
+
+**Error**: "Environment location directory is not empty" when creating a new project.
+
+![figure-29](images/13_pycharm.png)
+
+**Answer**: This error message means you are creating a duplicate Conda environment which is not allowed by the IDE and Conda. You must [remove an environment ](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment) and remove &lt;Conda&gt;\envs\\&lt;env name&gt; folder in your machine manually.
+
+**Error**: I cannot run Jupyter notebook or .ipynb file in PyCharm Community Edition.
+
+**Answer**: The [Jupyter Notebook integration](https://www.jetbrains.com/help/pycharm/jupyter-notebook-support.html) supported is available in PyCharm Professional Edition only.
+
+**Error**: Can I use Eikon Data API in PyCharm?
+
+**Answer**: Yes, you can. You just install [Eikon Data API](https://pypi.org/project/eikon/) library to the environment.
+
+**Error**: I want to use Spyder IDE. How can I use it?
+
+**Answer**: Please check the [Spyder IDE official page](https://www.spyder-ide.org/) and [document](https://docs.spyder-ide.org/current/index.html) for more detail.
+
+**Error**: Where can I find more detail about PyCharm usage?
+
+**Answer**: Please check the [PyCharm Getting started](https://www.jetbrains.com/help/pycharm/getting-started.html) page for more detail.
+
 
 ## <a id="ref"></a>References
 
