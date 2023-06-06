@@ -323,13 +323,24 @@ Please see more detail on the [Configure a Python interpreter](https://www.jetbr
 
 **Answer**: Please check the [PyCharm Getting started](https://www.jetbrains.com/help/pycharm/getting-started.html) page for more detail.
 
+## <a id="conclusion"></a>Conclusion
+
+PyCharm is one of the most popular IDEs for Python development. It supports Python virtual environment, Package management, and deployment, plugins supported, etc. Python developers can gain benefits from IDE automation and a full-features development environment. These make PyCharm suitable for the rapid development nature of Refinitiv Data Library for Python. 
+
+I hope this step-by-step guide can help Python developers get started using our Python libraries with PyCharm IDE.
 
 ## <a id="ref"></a>References
 
 For further details, please check out the following resources:
 * [Refinitiv Data Library for Python](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) website.
+* [Refinitiv Data Library for Python: Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) page.
+* [Refinitiv Data Library for Python: Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/tutorials) page.
 * [Getting Started with Refinitiv Data Platform](https://developers.refinitiv.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article
 * [PyCharm: Configure a conda virtual environment](https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html#create-a-conda-environment)
 * [PyCharm: Create and run your first project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html)
+* [PyCharm Tutorials](https://www.jetbrains.com/pycharm/guide/tutorials/)
+* [Getting Started with PyCharm](https://www.jetbrains.com/pycharm/guide/tutorials/getting-started-pycharm/)
+* [PyCharm for Productive Python Development (Guide)](https://realpython.com/pycharm-guide/)
 
+For any questions related to this article or the Refinitiv Data Library for Python, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/index.html).
 
