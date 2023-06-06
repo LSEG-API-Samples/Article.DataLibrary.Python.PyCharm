@@ -13,12 +13,12 @@ ALL EXAMPLE CODE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS FOR 
 import json
 import refinitiv.data as rd
 
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    # Open Platform Session
     rd.open_session(name='platform.rdp')
+    # Getting Data
     data = rd.get_data(['EUR=', 'THB='], fields=['BID', 'ASK'])
     print(data)
-
+    # Close session
     rd.close_session()
 

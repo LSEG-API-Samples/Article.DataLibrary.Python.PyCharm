@@ -19,7 +19,9 @@ from refinitiv.data.content.historical_pricing import Intervals
 
 
 if __name__ == '__main__':
+    # Open Platform Session
     rd.open_session(name='platform.rdp')
+    # Getting Data
     universe = 'META.O'
     response = historical_pricing.summaries.Definition(
         universe=universe,
@@ -28,12 +30,16 @@ if __name__ == '__main__':
         fields=['BID', 'ASK', 'OPEN_PRC', 'HIGH_1', 'LOW_1', 'TRDPRC_1']
     ).get_data()
 
+    # Preparing data for plotting a graph
+    # Add RIC name to be Dataframe column
     response.data.df['Instrument'] = universe
+    # Reset index
     response.data.df.reset_index(level=0, inplace=True)
+    # Plotting Graph
     dataPlot = pd.DataFrame(response.data.df,
                             columns=['Instrument', 'Date', 'BID', 'ASK', 'OPEN_PRC', 'TRDPRC_1', 'HIGH_1', 'LOW_1'])
     dataPlot.sort_values('Date', ascending=True, inplace=True)
     dataPlot.plot(x='Date', y=['BID', 'ASK', 'OPEN_PRC', 'TRDPRC_1', 'HIGH_1', 'LOW_1'], figsize=(14, 7))
     plt.show()
-    
+    # Close session
     rd.close_session()

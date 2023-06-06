@@ -13,12 +13,10 @@ ALL EXAMPLE CODE IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS FOR 
 import json
 import refinitiv.data as rd
 
-
-
 if __name__ == '__main__':
+    # Open Platform Session
     rd.open_session(name='platform.rdp')
-
-
+    # Getting News Headline Data
     request_definition = rd.delivery.endpoint_request.Definition(
         url="/data/news/v1/headlines",
         method=rd.delivery.endpoint_request.RequestMethod.GET,
@@ -30,7 +28,7 @@ if __name__ == '__main__':
     headline = response.data.raw['data'][0]['newsItem']['itemMeta']['title'][0]['$']
     storyId = response.data.raw['data'][0]['storyId']
     print(headline)
-
+    # Getting News Story Data
     story_url = 'https://api.refinitiv.com/data/news/v1/stories/{storyId}'
     request_definition = rd.delivery.endpoint_request.Definition(
         url=story_url,
@@ -40,6 +38,6 @@ if __name__ == '__main__':
     response = request_definition.get_data()
     story = response.data.raw['newsItem']['contentSet']['inlineData'][0]['$']
     print(story)
-
+    # Close session
     rd.close_session()
 
