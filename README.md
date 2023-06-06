@@ -54,6 +54,8 @@ For more detail regarding the Refinitiv Data Platform, please see the following 
 - [Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) page.
 - [Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/tutorials) page.
 
+That covers a brief introduction to Refinitiv Data Library for Python.
+
 ## <a id="new_project"></a>Set up a blank project
 
 ### Step 1: Creating a new project
@@ -89,9 +91,11 @@ The result is as follows:
 
 ![figure-6](images/05_pycharm.png "hello world example")
 
+Now the basic Python setting is done for PyCharm.
+
 ### Step 2: Set up the Project setting for Refinitiv Data Library for Python
 
-The next step is installing the Refinitiv Data Library for Python dependencies. Firstly, open the Python Package tool window available at the bottom of the screen as follows:
+So, now let’s look at installing the Refinitiv Data Library for Python dependencies. Firstly, open the Python Package tool window available at the bottom of the screen as follows:
 
 ![figure-7](images/06_pycharm_package.png "PyCharm Package tool window")
 
@@ -165,7 +169,7 @@ If your RDP credential works fine, the running result shows as follows:
 
 ![figure-13](images/07_pycharm_code_2.png "PyCharm with RD Run Result")
 
-Now your PyCharm is ready to work with Refinitiv Data Library for Python.
+Now your PyCharm is ready to work with Refinitiv Data Library for Python. Let’s leave a ```main.py``` file there.
 
 For more detail about packages management with PyCharm, please check the [official document](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html).
 
@@ -196,7 +200,6 @@ import matplotlib.pyplot as plt
 import refinitiv.data as rd
 from refinitiv.data.content import historical_pricing
 from refinitiv.data.content.historical_pricing import Intervals
-
 
 if __name__ == '__main__':
     rd.open_session(name='platform.rdp')
@@ -327,7 +330,7 @@ Please see more detail on the [Configure a Python interpreter](https://www.jetbr
 
 PyCharm is one of the most popular IDEs for Python development. It supports Python virtual environment, Package management, and deployment, plugins supported, etc. Python developers can gain benefits from IDE automation and a full-features development environment. These make PyCharm suitable for the rapid development nature of Refinitiv Data Library for Python. 
 
-I hope this step-by-step guide can help Python developers get started using our Python libraries with PyCharm IDE.
+I hope this step-by-step guide can help Python developers get started using our Python libraries with PyCharm IDE. That completes my article.
 
 ## <a id="ref"></a>References
 
