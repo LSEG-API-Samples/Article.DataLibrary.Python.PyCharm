@@ -18,23 +18,8 @@
                 "app-key": "YOUR APP KEY GOES HERE!",
                 "username": "RDP User ID",
                 "password": "RDP Password"
-            },
-            "deployed": {
-                "app-key": "YOUR APP KEY GOES HERE!",
-                "realtime-distribution-system": {
-                    "url" : "YOUR DEPLOYED HOST:PORT GOES HERE!",
-                    "dacs" : {
-                        "username" : "YOUR DACS ID GOES HERE!",
-                        "application-id" : 256,
-                        "position" : ""
-                    }
-                }
-            }
-        },
-        "desktop": {
-            "workspace": {
-                "app-key": "YOUR APP KEY GOES HERE!"
             }
         }
+        
     }
 }
