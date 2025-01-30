@@ -1,7 +1,7 @@
 # How to set up Python Development Project with PyCharm
 
-- version: 1.0.0
-- Last update: June 2023
+- version: 2.0.0
+- Last update: January 2025
 - Environment: Windows
 - Compiler: Python
 - Prerequisite: [Python and PyCharm prerequisite](#prerequisite)
@@ -14,9 +14,11 @@ PyCharm has two editions, a Professional Edition with full features, and a free 
 
 As a developer, I am using the [IntelliJ IDEA](https://www.jetbrains.com/idea/) for Java development projects and [Visual Studio Code](https://code.visualstudio.com/) editor for Python and JavaScript/TypeScript development projects. I admit that I am never interested in PyCharm. However, there are a lot of questions about how to use our Python APIs/libraries with PyCharm, so it is a good opportunity for me to learn how to use PyCharm and share my knowledge.
 
-This example project shows how to create a Python project with the [Refinitiv Data Library for Python](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) on PyCharm. It covers from starting a blank project to importing existing source code and dependencies configuration file to the IDE. 
+This example project shows how to create a Python project with the [Data Library for Python version 1](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) on PyCharm. It covers from starting a blank project to importing existing source code and dependencies configuration file to the IDE. 
 
 Note: This project is based on **PyCharm Community Edition 2023.1.2** and the **Classic UI**. If you are using a Professional Edition or New UI, some user interfaces may be different. 
+
+**Update January 2025**: There is a new and improve [LSEG Data Library for Python](https://developers.lseg.com/en/api-catalog/lseg-data-platform/lseg-data-library-for-python) (aka Data Library version 2) available now.
 
 ## <a id="prerequisite"></a>Python and PyCharm prerequisite
 
@@ -32,29 +34,31 @@ Next, install the [Anaconda](https://www.anaconda.com/) or [Minconda](https://co
 
 This project uses Miniconda version 23.3.1.
 
-### Access to the Refinitiv Data Platform
+### Access to the Delivery Platform
 
-This project uses Refinitiv Data Platform (RDP) User ID type credential (example: sample@lseg.com). 
+This project uses Delivery Platform (RDP - formerly known as Refinitiv Data Platform) Version 1 Authentication (User ID or Machine-ID type). 
 
-Please contact your Refinitiv representative to help you with the RDP account and services.
+Please contact your LSEG representative to help you with the RDP account and services.
 
 ### Internet Access to PyPI
 
-The Refinitiv Data Library for Python is available in the Python Package Index ([PyPI](https://pypi.org/)). You can use the Python pip tool to download the library from [Refinitiv-Data package](https://pypi.org/project/refinitiv-data/) over internet. 
+The Data Library for Python version 1 is available in the Python Package Index ([PyPI](https://pypi.org/)). You can use the Python pip tool to download the library from [Refinitiv-Data package](https://pypi.org/project/refinitiv-data/) over internet. The LSEG Data Library for Python is also available on [PyPI: lseg-data](https://pypi.org/project/lseg-data/) too.
 
-## <a id="whatis_rdp"></a>What is Refinitiv Data Library for Python?
+## <a id="whatis_rdp"></a>What is Data Library for Python version 1?
 
-Now let me turn to our example Python library for this project. The [Refinitiv Data Library for Python](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) (aka RD Lib - Python) provides a set of ease-of-use interfaces offering coders uniform access to the breadth and depth of financial data and services available on the Refinitiv Data Platform. The API is designed to provide consistent access through multiple access channels and target both Professional Developers and Financial Coders. Developers can choose to access content from the desktop, through their deployed streaming services, or directly to the cloud. With the Refinitiv Data Library, the same Python code can be used to retrieve data regardless of which access point you choose to connect to the platform.
+Now let me turn to our example Python library for this project. The [Data Library for Python version 1](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) (aka RD Lib - Python, Refinitiv Data Library for Python) provides a set of ease-of-use interfaces offering coders uniform access to the breadth and depth of financial data and services available on the RDP Platform. The API is designed to provide consistent access through multiple access channels and target both Professional Developers and Financial Coders. Developers can choose to access content from the desktop, through their deployed streaming services, or directly to the cloud. With the Data Library, the same Python code can be used to retrieve data regardless of which access point you choose to connect to the platform.
 
-This example project is focusing on the platform session which connecting to the [Refinitiv Data Platform APIs](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) only.  
+This example project is focusing on the platform session which connecting to the [Delivery Platform (RDP) APIs](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-apis) only.  
 
-![figure-1](images/rd_image.png "Refinitiv Data Library for Python")
+![figure-1](images/rd_image.png "Data Library for Python")
 
-For more detail regarding the Refinitiv Data Platform, please see the following APIs resources: 
-- [Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) page.
-- [Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/tutorials) page.
+For more detail regarding the Data Library for Python version 1, please see the following APIs resources: 
+- [Quick Start](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) page.
+- [Tutorials](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/tutorials) page.
 
-That covers a brief introduction to Refinitiv Data Library for Python.
+That covers a brief introduction to Data Library for Python version 1.
+
+**Update January 2025**: This project uses Refinitiv Data Library, which is the 1st version of the Python library. The new and improved [LSEG Data Library for Python](https://developers.lseg.com/en/api-catalog/lseg-data-platform/lseg-data-library-for-python) is version 2. The LSEG Data Library is also compatible with PyCharm. Please find more detail on the [Essential Guide to the Data Libraries](https://developers.lseg.com/en/article-catalog/article/essential-guide-to-the-data-libraries) article.
 
 ## <a id="new_project"></a>Set up a blank project
 
@@ -93,9 +97,9 @@ The result is as follows:
 
 Now the basic Python setting is done for PyCharm.
 
-### Step 2: Set up the Project setting for Refinitiv Data Library for Python
+### Step 2: Set up the Project setting for Data Library for Python version 1
 
-So, now let’s look at installing the Refinitiv Data Library for Python dependencies. Firstly, open the Python Package tool window available at the bottom of the screen as follows:
+So, now let’s look at installing the Data Library for Python version 1 dependencies. Firstly, open the Python Package tool window available at the bottom of the screen as follows:
 
 ![figure-7](images/06_pycharm_package.png "PyCharm Package tool window")
 
@@ -103,7 +107,9 @@ You can start typing the package name in the Search field. PyCharm then shows ma
 
 ![figure-8](images/06_pycharm_package_conda.png "PyCharm search package")
 
-To install Refinitiv Data Library for Python, type **refinitiv** in the Search field. The RD Lib - Python is available on PyPI only, so I choose the **refinitiv-data** package under PyPI and click the "Install with pip" button to install the package.
+To install Data Library for Python version 1, type **refinitiv** in the Search field. The RD Lib - Python is available on PyPI only, so I choose the **refinitiv-data** package under PyPI and click the "Install with pip" button to install the package.
+
+**Note**: To install the LSEG Data Library for Python, you can type **lseg-data** in the Search field.
 
 ![figure-9](images/06_pycharm_package_rd.png "PyCharm install refinitiv-data 1")
 
@@ -144,7 +150,7 @@ The next step is testing the RD Lib - Python. You can add the **refinitiv-data.c
 }
 ```
 
-Please refer to the [Quickstart page](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) if you are using other Access Points such as Desktop session, etc.
+Please refer to the [Quickstart page](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) if you are using other Access Points such as Desktop session, etc.
 
 Next, change the code of ```main.py``` to call RD - Lib Python instead as follows:
 
@@ -169,7 +175,7 @@ If your RDP credential works fine, the running result shows as follows:
 
 ![figure-13](images/07_pycharm_code_2.png "PyCharm with RD Run Result")
 
-Now your PyCharm is ready to work with Refinitiv Data Library for Python. Let’s leave a ```main.py``` file there.
+Now your PyCharm is ready to work with Data Library for Python version 1. Let’s leave a ```main.py``` file there.
 
 For more detail about packages management with PyCharm, please check the [official document](https://www.jetbrains.com/help/pycharm/installing-uninstalling-and-upgrading-packages.html).
 
@@ -335,15 +341,13 @@ I hope this step-by-step guide can help Python developers get started using our 
 ## <a id="ref"></a>References
 
 For further details, please check out the following resources:
-* [Refinitiv Data Library for Python](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) website.
-* [Refinitiv Data Library for Python: Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/quick-start) page.
-* [Refinitiv Data Library for Python: Tutorials](https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python/tutorials) page.
-* [Getting Started with Refinitiv Data Platform](https://developers.refinitiv.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article
+* [Data Library for Python version 1](https://developers.lseg.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-library-for-python) and [LSEG Data Library for Python](https://developers.lseg.com/en/api-catalog/lseg-data-platform/lseg-data-library-for-python) on the [LSEG Developer Community](https://developers.lseg.com/) website.
+* [Getting Started with Delivery Platform](https://developers.lseg.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform) article
 * [PyCharm: Configure a conda virtual environment](https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html#create-a-conda-environment)
 * [PyCharm: Create and run your first project](https://www.jetbrains.com/help/pycharm/creating-and-running-your-first-python-project.html)
 * [PyCharm Tutorials](https://www.jetbrains.com/pycharm/guide/tutorials/)
 * [Getting Started with PyCharm](https://www.jetbrains.com/pycharm/guide/tutorials/getting-started-pycharm/)
 * [PyCharm for Productive Python Development (Guide)](https://realpython.com/pycharm-guide/)
 
-For any questions related to this article or the Refinitiv Data Library for Python, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/index.html).
+For any questions related to this article or the Data Library for Python, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/index.html).
 
